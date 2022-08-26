@@ -2,31 +2,29 @@
 
 A type generator for Next.js routes for fully typesafe routes.
 
-This is heavily derived from [next-type-safe-routes][next-type-safe-routes]. The main difference being that rather than being a Next.js plugin that runs continuously with your Next.js server this package is designed to be run separately as a script, reducing overhead and the need to have it present in production.
+This is heavily derived from [next-type-safe-routes][next-type-safe-routes]. The main difference being that rather than being a Next.js plugin that runs continuously with your Next.js server this package is designed to be run separately as a script, reducing overhead and the need to an extra script running in production.
 
 ## Installation
 
 yarn
 
 ```
-yarn add -D next-routes-typegen
+yarn add next-routes-typegen
 ```
 
 npm
 
 ```
-npm install -D next-routes-typegen
+npm install next-routes-typegen
 ```
 
 ## How it works
 
 This package comes with a `generate-route-types` command. This script traverses your Next.js app's pages directory and generates types for each page and api route.
 
-It will output a module declaration file in the location of your choosing that will override the default types of the package with your route types.
+It will output a module declaration file in the location of your choosing that will override the default types of the package with your route types. You should commit this file to source control and regenerate it when your routes change.
 
 You can then import the provided route util functions that will be fully typed.
-
-[next-type-safe-routes]: https://github.com/ckastbjerg/next-type-safe-routes
 
 ## Usage
 
@@ -83,3 +81,5 @@ You can also add it to the `prebuild` and/or `predev` scripts to your package.js
   }
 }
 ```
+
+[next-type-safe-routes]: https://github.com/ckastbjerg/next-type-safe-routes
