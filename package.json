@@ -1,0 +1,37 @@
+{
+  "name": "next-routes-typegen",
+  "description": "A type generator for Next.js routes.",
+  "version": "1.0.0-semantically-released",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "generate-route-types": "./dist/bin/generatePageTypes.js"
+  },
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.7.11",
+    "@types/yargs": "^17.0.11",
+    "typescript": "^4.7.4",
+    "vitest": "^0.22.1"
+  },
+  "dependencies": {
+    "walk-sync": "^3.0.0",
+    "yargs": "^17.5.1"
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc --module esnext --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --outDir dist",
+    "test": "vitest"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+// Vitest Snapshot v1
+
+exports[`generateTypeScriptFile > generates types for pages directory with pages and api routes 1`] = `
+"// Do not modify this file. It is auto-generated.
+//
+// To regenerate it run the \`generate-route-types\` command.
+
+declare module 'next-routes-typegen' {
+  type Query = Record<string, any>;
+  
+  export type TypeSafePage = 
+    |  \\"/404\\"
+    |  { route: \\"/404\\", query?: Query, path?: undefined }
+    |  { route: \\"/catch-all\\", path: string, query?: Query }
+    |  \\"/\\"
+    |  { route: \\"/\\", query?: Query, path?: undefined }
+    |  { route: \\"/nested-catch-all/[dynamic]/slugs\\", path: string, params: { \\"dynamic\\": string | number }, query?: Query }
+    |  \\"/optional-catch-all\\"
+    |  { route: \\"/optional-catch-all\\", path?: string, query?: Query }
+    |  { route: \\"/route-with-symbols/[value-with-hyphens]\\", params: { \\"value-with-hyphens\\": string | number }, query?: Query, path?: undefined }
+    |  { route: \\"/users/[userId]\\", params: { \\"userId\\": string | number }, query?: Query, path?: undefined }
+    |  \\"/users\\"
+    |  { route: \\"/users\\", query?: Query, path?: undefined }
+
+  export type TypeSafeApiRoute = 
+    |  { route: \\"/api/[authId]\\", params: { \\"authId\\": string | number }, query?: Query, path?: undefined }
+    |  { route: \\"/api/catch-all\\", path: string, query?: Query }
+    |  \\"/api/multiple-periods/site.webmanifest\\"
+    |  { route: \\"/api/multiple-periods/site.webmanifest\\", query?: Query, path?: undefined }
+    |  \\"/api/optional-catch-all\\"
+    |  { route: \\"/api/optional-catch-all\\", path?: string, query?: Query }
+    |  { route: \\"/api/users/[userId]\\", params: { \\"userId\\": string | number }, query?: Query, path?: undefined }
+    |  \\"/api/users\\"
+    |  { route: \\"/api/users\\", query?: Query, path?: undefined }
+
+  export const getRoute: (typeSafeUrl: TypeSafePage | TypeSafeApiRoute) => string;
+  export const getPathname: (typeSafeUrl: TypeSafePage | TypeSafeApiRoute) => string;
+}
+
+"
+`;
