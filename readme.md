@@ -1,5 +1,7 @@
 # next-routes-typegen
 
+[![npm](https://img.shields.io/npm/v/next-routes-typegen)](https://www.npmjs.com/package/next-routes-typegen)
+
 A type generator for Next.js routes for fully typesafe routes.
 
 This is heavily derived from [next-type-safe-routes][next-type-safe-routes]. The main difference being that rather than being a Next.js plugin that runs continuously with your Next.js server this package is designed to be run separately as a script, reducing overhead and the need to an extra script running in production.
